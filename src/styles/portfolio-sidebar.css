@@ -1,0 +1,38 @@
+.demo-wallet.dw-dashboard.dw-portfolio-shell {
+    grid-template-columns: 160px minmax(0, 1fr);
+}
+
+.dw-dashboard.dw-portfolio-shell .dw-sidebar {
+    padding: 12px 8px;
+    overflow: hidden;
+}
+
+.dw-dashboard.dw-portfolio-shell .dw-navigation a {
+    padding: 7px 9px;
+    font-size: 11px;
+    gap: 8px;
+}
+
+.dw-dashboard.dw-portfolio-shell .dw-navigation a span {
+    font-size: 18px;
+}
+
+@media (max-width: 800px) {
+    .demo-wallet.dw-dashboard.dw-portfolio-shell {
+        grid-template-columns: 50px minmax(0, 1fr);
+    }
+
+    .dw-dashboard.dw-portfolio-shell .dw-sidebar {
+        padding: 8px 4px;
+    }
+
+    .dw-dashboard.dw-portfolio-shell .dw-navigation a {
+        padding: 8px 4px;
+    }
+}
+
+@media (max-height: 700px) {
+    .dw-dashboard.dw-portfolio-shell .dw-sidebar-note {
+        padding: 10px 4px;
+    }
+}

@@ -59,7 +59,7 @@ export default function Terminal({ initialSymbol = "BTCUSDT" }: { initialSymbol?
   return <main className="terminal">
     <header className="terminal-header">
       <Link href="/" aria-label="Gryphon home"><Image src="/brand/logo-gold.png" width={2172} height={724} alt="Gryphon" className="terminal-logo" sizes="145px" preload/></Link>
-      <nav className="terminal-nav" aria-label="Terminal navigation"><span className="terminal-caption">TERMINAL</span><Link href="/terminal" className="terminal-tab active" aria-current="page">TRADE</Link><Link href="/wallet" className="terminal-tab">DASHBOARD</Link><button className="terminal-tab" type="button" disabled title="Card — coming soon">CARD</button></nav>
+      <nav className="terminal-nav" aria-label="Terminal navigation"><Link href="/terminal" className="terminal-tab active" aria-current="page">TRADE</Link><Link href="/dashboard" className="terminal-tab">DASHBOARD</Link><Link href="/wallet" className="terminal-tab">WALLET</Link></nav>
       <div className="terminal-header-actions">
         <a className="terminal-social" href="https://x.com/TryGryphon" target="_blank" rel="noopener noreferrer" aria-label="Gryphon on X (opens in a new tab)" title="Gryphon on X">𝕏</a>
         <div className="terminal-status" title={error ? "Market data connection failed" : loading ? "Updating market data" : "Market data updates every five minutes"}><i className={error ? "offline" : ""}/>{error ? "OFFLINE" : loading ? "SYNC" : "LIVE"}</div>

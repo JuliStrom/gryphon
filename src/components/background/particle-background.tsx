@@ -37,16 +37,16 @@ export default function ParticleBackground() {
               modes: {
                 repulse: {
                   distance: 110,
-                  speed: 0.35,
+                  speed: 0.385,
                   factor: 2,
-                  maxSpeed: 0.6,
+                  maxSpeed: 0.66,
                   easing: "ease-out-quad",
                   restore: { enable: false },
                 },
               },
             },
             particles: {
-              number: { value: mobileScreen.matches ? 80 : 300 },
+              number: { value: mobileScreen.matches ? 68 : 255 },
               color: { value: ["#528abb", "#dfb75f", "#f8f3e7"] },
               shape: { type: "circle" },
               opacity: { value: { min: 0.25, max: 0.7 } },
