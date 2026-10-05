@@ -968,6 +968,80 @@
     white-space: nowrap
 }
 
+/* Scope the navigation so landing-page nav styles cannot affect its borders. */
+:root[data-theme="dark"] .terminal .terminal-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    width: auto;
+    padding: 3px;
+    border: 1px solid #dfb75f26;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #112a3e, #0b1d2e);
+    box-shadow: inset 0 1px 0 #ffffff04;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-caption {
+    margin: 0 6px 0 0;
+    padding: 0 12px;
+    border: 0;
+    border-right: 1px solid #dfb75f26;
+    line-height: 20px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #7e96aa;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-tab {
+    min-height: 32px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: #a4b5c5;
+    font: 10px/1 monospace;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    transition: background .18s, color .18s, border-color .18s;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-tab.active {
+    background: linear-gradient(120deg, #dfb75f24, #dfb75f0c);
+    border-color: #dfb75f48;
+    color: #f1cd80;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-tab:hover:not(:disabled):not(.active) {
+    background: #ffffff06;
+    border-color: #dfb75f20;
+    color: #edc875;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-tab:focus-visible {
+    outline: 2px solid #dfb75f;
+    outline-offset: 2px;
+}
+
+:root[data-theme="dark"] .terminal .terminal-nav .terminal-tab:disabled {
+    color: #587084;
+    opacity: .7;
+}
+
+@media(max-width:1000px) {
+    :root[data-theme="dark"] .terminal .terminal-nav .terminal-caption {display:none}
+    :root[data-theme="dark"] .terminal .terminal-nav .terminal-tab {padding:0 10px;letter-spacing:.8px}
+}
+
+@media(max-width:650px) {
+    :root[data-theme="dark"] .terminal .terminal-nav {justify-self:center;max-width:100%;gap:2px;padding:2px;border-radius:6px}
+    :root[data-theme="dark"] .terminal .terminal-nav .terminal-tab {min-height:30px;padding:0 12px;font-size:9px;letter-spacing:.6px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+    :root[data-theme="dark"] .terminal .terminal-nav .terminal-tab {transition:none}
+}
+
 .terminal-nav .terminal-caption {
     color: var(--muted);
     font: 10px monospace;
