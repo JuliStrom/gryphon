@@ -9,9 +9,13 @@ export async function GET(request: Request) {
         return Response.json({error: "Unsupported symbol or interval."}, {status: 400});
     }
     try {
-        const available = await getAvailableMarkets();
-        if (!available.some((market) => market.symbol === symbol)) return Response.json({error: "Unsupported symbol."}, {status: 400});
-        const [ranked, candles] = await Promise.all([getMarkets(available), getCandles(symbol, interval as Interval)]);
+        const availablePromise = getAvailableMarkets();
+        const [available, ranked, candles] = await Promise.all([
+            availablePromise,
+            getMarkets(availablePromise),
+            availablePromise.then((markets) => markets.some((market) => market.symbol === symbol) ? getCandles(symbol, interval as Interval) : null),
+        ]);
+        if (!candles) return Response.json({error: "Unsupported symbol."}, {status: 400});
         if (!ranked.length) throw new Error("No active markets available");
         const top = ranked.slice(0, 80);
         const definitions = new Map(available.map((market) => [market.symbol, market]));
