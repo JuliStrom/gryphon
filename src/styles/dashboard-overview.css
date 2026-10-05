@@ -1,0 +1,407 @@
+.dw-market-overview {
+    margin-bottom: 12px;
+    min-width: 0
+}
+
+.dw-ticker-grid {
+    display: grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 9px
+}
+
+.dw-ticker-card {
+    display: block;
+    min-width: 0;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, #142f48, #0e2439);
+    border: 1px solid #8ca7c328;
+    border-radius: 7px;
+    transition: border-color .2s, background .2s
+}
+
+.dw-ticker-card:hover {
+    border-color: #dfb75f70;
+    background: #16334c
+}
+
+.dw-ticker-name {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px
+}
+
+.dw-ticker-name > span {
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 16px
+}
+
+.dw-ticker-name small {
+    margin: 0 0 0 auto;
+    font: 8px monospace;
+    color: #9baec4
+}
+
+.dw-ticker-body {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px
+}
+
+.dw-ticker-body > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0
+}
+
+.dw-ticker-body strong {
+    font: 15px monospace;
+    color: #edf2f8
+}
+
+.dw-ticker-body span {
+    font: 10px monospace
+}
+
+.dw-ticker-body svg {
+    width: 40%;
+    max-width: 105px;
+    height: 45px;
+    flex-shrink: 0
+}
+
+.dw-ticker-caption {
+    display: block;
+    color: #8fa6bc;
+    font: 8px monospace;
+    margin-top: 7px
+}
+
+.dw-index-grid {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 9px
+}
+
+.dw-dashboard .dw-index-grid > .dw-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    padding: 10px 14px
+}
+
+.dw-index-grid .dw-panel-title {
+    margin-bottom: 4px
+}
+
+.dw-index-grid .dw-panel-title h2 {
+    font-weight: 500;
+    font-size: 13px
+}
+
+.dw-index-grid .dw-panel-title > span {
+    font: 8px monospace
+}
+
+.dw-fear-gauge {
+    flex: 1;
+    display: grid;
+    place-items: center
+}
+
+.dw-fear-gauge svg {
+    width: 200px;
+    height: 130px
+}
+
+.dw-gauge-number {
+    fill: #f3e9d0;
+    font: 600 32px Arial, Helvetica, sans-serif
+}
+
+.dw-gauge-state {
+    fill: #a9bbcd;
+    font: 10px Arial, Helvetica, sans-serif
+}
+
+.dw-index-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #8fa6bc;
+    font: 8px monospace;
+    line-height: 1.5;
+    margin-top: 5px
+}
+
+.dw-index-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: #9baec4;
+    font-size: 11px;
+    gap: 12px
+}
+
+.dw-dashboard .dw-index-empty button {
+    color: #edc875;
+    border: 1px solid #dfb75f40;
+    border-radius: 4px;
+    padding: 5px 9px
+}
+
+.dw-season-value {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 17px 0 18px
+}
+
+.dw-season-value > strong {
+    font: 500 32px Arial, Helvetica, sans-serif;
+    color: #f3e9d0
+}
+
+.dw-season-value small {
+    display: inline;
+    font: 11px monospace;
+    color: #9baec4;
+    margin-left: 4px
+}
+
+.dw-season-value > span {
+    font: 9px monospace;
+    color: #dfb75f;
+    padding: 5px 8px;
+    border: 1px solid #dfb75f30;
+    border-radius: 4px;
+    background: #dfb75f0b
+}
+
+.dw-season-labels, .dw-season-ticks {
+    display: flex;
+    justify-content: space-between;
+    color: #9baec4;
+    font-size: 9px
+}
+
+.dw-season-labels {
+    margin-bottom: 9px
+}
+
+.dw-season-bar {
+    position: relative;
+    height: 7px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #ef9a42 0% 25%, #dfb75f 25% 50%, #729dcc 50% 75%, #658bff 75% 100%)
+}
+
+.dw-season-bar i {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border: 3px solid #102840;
+    border-radius: 50%;
+    background: #edf2f8;
+    box-shadow: 0 0 0 1px #ffffff30
+}
+
+.dw-season-ticks {
+    font: 8px monospace;
+    margin-top: 9px
+}
+
+.dw-season-description {
+    color: #9baec4;
+    font-size: 9px;
+    line-height: 1.6;
+    margin: 12px 0 auto
+}
+
+.dw-season-card .dw-index-caption {
+    margin-top: 10px
+}
+
+@media (max-width: 1150px) {
+    .dw-ticker-grid {
+        grid-template-columns:repeat(2, minmax(0, 1fr))
+    }
+
+    .dw-ticker-card {
+        padding: 12px
+    }
+
+    .dw-index-grid > .dw-panel {
+        padding: 14px
+    }
+
+    .dw-index-caption {
+        font-size: 7px;
+        flex-wrap: wrap;
+        gap: 4px
+    }
+
+    .dw-season-description {
+        font-size: 8px
+    }
+}
+
+@media (max-width: 650px) {
+    .dw-ticker-grid {
+        gap: 6px
+    }
+
+    .dw-ticker-name {
+        font-size: 10px
+    }
+
+    .dw-ticker-name small {
+        display: none
+    }
+
+    .dw-ticker-body {
+        gap: 5px
+    }
+
+    .dw-ticker-body strong {
+        font-size: 11px
+    }
+
+    .dw-ticker-body svg {
+        width: 35%;
+        height: 28px
+    }
+
+    .dw-ticker-body span {
+        font-size: 9px
+    }
+
+    .dw-index-grid {
+        grid-template-columns:minmax(0, 1fr);
+        gap: 8px
+    }
+
+    .dw-dashboard .dw-index-grid > .dw-panel {
+        min-height: 140px
+    }
+
+    .dw-market-overview {
+        margin-bottom: 10px
+    }
+}
+
+/* Keep market snapshots secondary to the portfolio. */
+.dw-dashboard .dw-ticker-name {
+    font-size: 11px;
+    gap: 6px
+}
+
+.dw-dashboard .dw-ticker-name > span {
+    width: 18px;
+    height: 18px;
+    font-size: 13px
+}
+
+.dw-dashboard .dw-ticker-body {
+    margin-top: 6px;
+    gap: 6px
+}
+
+.dw-dashboard .dw-ticker-body strong {
+    font-size: 13px
+}
+
+.dw-dashboard .dw-ticker-body span {
+    font-size: 9px
+}
+
+.dw-dashboard .dw-ticker-body svg {
+    height: 30px;
+    max-width: 80px
+}
+
+.dw-dashboard .dw-ticker-caption {
+    font-size: 7px;
+    margin-top: 4px
+}
+
+.dw-dashboard .dw-index-grid .dw-panel-title {
+    margin-bottom: 0
+}
+
+.dw-dashboard .dw-index-grid .dw-panel-title h2 {
+    font-size: 11px
+}
+
+.dw-dashboard .dw-fear-gauge svg {
+    width: 150px;
+    height: 98px
+}
+
+.dw-dashboard .dw-index-caption {
+    font-size: 7px;
+    margin-top: 3px;
+    gap: 6px
+}
+
+.dw-dashboard .dw-season-value {
+    margin: 10px 0 12px;
+    gap: 10px
+}
+
+.dw-dashboard .dw-season-value > strong {
+    font-size: 25px
+}
+
+.dw-dashboard .dw-season-value > span {
+    font-size: 8px;
+    padding: 4px 6px
+}
+
+.dw-dashboard .dw-season-labels {
+    font-size: 8px;
+    margin-bottom: 7px
+}
+
+.dw-dashboard .dw-season-bar {
+    height: 5px
+}
+
+.dw-dashboard .dw-season-bar i {
+    width: 13px;
+    height: 13px
+}
+
+.dw-dashboard .dw-season-ticks {
+    font-size: 7px;
+    margin-top: 6px
+}
+
+.dw-dashboard .dw-season-description {
+    font-size: 8px;
+    margin-top: 8px
+}
+
+@media (min-width: 851px) {
+    .dw-dashboard .dw-ticker-grid {
+        grid-template-columns:repeat(4, minmax(0, 1fr))
+    }
+}
+
+@media (max-width: 850px) {
+    .dw-dashboard .dw-ticker-card {
+        padding: 9px 10px
+    }
+}

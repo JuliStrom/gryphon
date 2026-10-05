@@ -1,0 +1,1518 @@
+.demo-wallet {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns:205px minmax(0, 1fr);
+    background: #f4f7fa;
+    color: #142039;
+    color-scheme: light;
+    position: relative;
+    z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    overflow: hidden
+}
+
+.demo-wallet button {
+    cursor: pointer
+}
+
+.demo-wallet button:focus-visible, .demo-wallet a:focus-visible, .demo-wallet input:focus-visible {
+    outline: 2px solid #b78427;
+    outline-offset: 3px
+}
+
+.demo-wallet button {
+    border: 0;
+    background: none;
+    color: inherit
+}
+
+.demo-wallet small {
+    display: block;
+    color: #73829d;
+    font-size: 10px;
+    margin-top: 4px
+}
+
+.dw-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 10px;
+    background: linear-gradient(135deg, #fff, #f5f8fb);
+    border-right: 1px solid #e4eaf1;
+    overflow-y: auto
+}
+
+.dw-brand {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-bottom: 25px
+}
+
+.dw-brand img {
+    object-fit: contain
+}
+
+.dw-brand > span {
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1.5px
+}
+
+.dw-brand b {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #e8b454;
+    line-height: 4px;
+    letter-spacing: 0
+}
+
+.dw-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.dw-navigation button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 12px
+}
+
+.dw-navigation button > span {
+    font-size: 22px;
+    width: 22px;
+    text-align: center
+}
+
+.dw-navigation .selected {
+    background: #f5ead3;
+    font-weight: 700
+}
+
+.dw-navigation button:hover {
+    background: #f5ead3
+}
+
+.dw-navigation button:nth-child(8) {
+    border-top: 1px solid #e4eaf1;
+    margin-top: 14px;
+    padding-top: 20px;
+    border-radius: 0
+}
+
+.dw-promo {
+    position: relative;
+    background: linear-gradient(125deg, #081b30, #1c3551);
+    min-height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: auto;
+    color: #e8bf60
+}
+
+.dw-promo img {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    left: -25px;
+    bottom: -20px
+}
+
+.dw-promo > div {
+    position: relative;
+    margin: 70px 8px 18px 100px;
+    font-size: 12px
+}
+
+.dw-promo p {
+    font-size: 9px;
+    line-height: 1.7;
+    color: #c5d0dc
+}
+
+.dw-exit {
+    font-size: 9px;
+    color: #72829a;
+    text-align: center;
+    padding-top: 15px
+}
+
+.dw-main {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+.dw-topbar {
+    height: 65px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    background: #ffffff90
+}
+
+.dw-search {
+    height: 34px;
+    max-width: 390px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #dce4ee;
+    border-radius: 8px;
+    padding: 0 12px;
+    background: #f7f9fc
+}
+
+.dw-search > span {
+    font-size: 24px
+}
+
+.dw-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    background: none;
+    font-size: 11px;
+    outline: none;
+    color: #142039
+}
+
+.dw-search input::placeholder {
+    color: #75839c
+}
+
+.dw-demo-badge {
+    font: 9px monospace;
+    letter-spacing: 1px;
+    border: 1px solid #e6ca88;
+    background: #faf1d9;
+    color: #986f22;
+    border-radius: 5px;
+    padding: 5px 8px;
+    white-space: nowrap
+}
+
+.dw-topbar > .dw-demo-badge {
+    margin-left: auto
+}
+
+.dw-notifications {
+    font-size: 22px
+}
+
+.dw-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left
+}
+
+.dw-profile strong {
+    font-size: 12px
+}
+
+.dw-avatar {
+    width: 33px;
+    height: 33px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(#1d4a6a, #081b30);
+    color: #efc46b;
+    font-size: 17px
+}
+
+.dw-content {
+    padding: 0 18px 14px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    min-height: 0;
+    flex: 1
+}
+
+.dw-hero {
+    position: relative;
+    border-radius: 11px;
+    background: linear-gradient(115deg, #0b1b31, #1a3553 57%, #09182c);
+    color: white;
+    min-height: 183px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden
+}
+
+.dw-balance {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0
+}
+
+.dw-balance p {
+    margin: 0 0 5px;
+    font-size: 12px
+}
+
+.dw-balance p > span {
+    margin-left: 8px
+}
+
+.dw-balance h1 {
+    font-size: clamp(28px, 3vw, 42px);
+    letter-spacing: -1px;
+    margin: 0 0 7px;
+    font-weight: 700;
+    line-height: 1.2
+}
+
+.dw-balance > strong {
+    font-size: 15px;
+    color: #46dfaa
+}
+
+.dw-balance > strong span {
+    margin-left: 8px
+}
+
+.dw-ranges {
+    display: flex;
+    gap: 5px;
+    margin-top: 21px
+}
+
+.dw-ranges button {
+    font-size: 10px;
+    border: 1px solid #ffffff30;
+    color: #d6deec;
+    border-radius: 5px;
+    padding: 6px 10px
+}
+
+.dw-ranges .active {
+    background: linear-gradient(120deg, #fce5a3, #e7af43);
+    color: #182136;
+    border-color: transparent
+}
+
+.dw-chart {
+    width: 34%;
+    position: relative;
+    z-index: 1;
+    align-self: flex-end
+}
+
+.dw-chart svg {
+    width: 100%;
+    display: block;
+    overflow: visible
+}
+
+.dw-chart > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    color: #c2cfdf;
+    margin-top: 10px
+}
+
+.dw-hero-gryphon {
+    position: absolute;
+    right: 45px;
+    top: -55px;
+    width: 290px;
+    height: 320px;
+    object-fit: contain;
+    opacity: .93
+}
+
+.dw-motto {
+    position: absolute;
+    right: 25px;
+    top: 70px;
+    font: 9px/1.9 monospace;
+    letter-spacing: 2px;
+    color: #efc466
+}
+
+.dw-motto span {
+    display: block;
+    font-size: 25px;
+    line-height: 1.2
+}
+
+.dw-actions {
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap: 10px;
+    margin: 12px 0
+}
+
+.dw-actions button, .dw-earn button {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    background: #fff;
+    border: 1px solid #e9eef4;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: left;
+    box-shadow: 0 3px 10px #19385603
+}
+
+.dw-actions button:hover, .dw-earn button:hover {
+    border-color: #e7c676
+}
+
+.dw-actions b, .dw-earn button > b {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 400
+}
+
+.dw-action-icon {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(130deg, #ffdb95, #edb347);
+    font-size: 24px
+}
+
+.dw-grid {
+    display: grid;
+    grid-template-columns:minmax(360px, 1.8fr) minmax(250px, 1fr) minmax(205px, .73fr);
+    gap: 11px;
+    align-items: stretch
+}
+
+.dw-panel {
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 11px;
+    padding: 14px;
+    box-shadow: 0 4px 12px #19385603;
+    min-width: 0
+}
+
+.dw-panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px
+}
+
+.dw-panel h2 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0
+}
+
+.dw-panel-title button, .dw-panel-title a {
+    font-size: 9px;
+    white-space: nowrap;
+    color: #183f65
+}
+
+.dw-table-scroll {
+    overflow-x: auto
+}
+
+.dw-assets table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    white-space: nowrap
+}
+
+.dw-assets th {
+    text-align: left;
+    font-size: 9px;
+    font-weight: 400;
+    color: #75839b;
+    padding: 0 8px 8px 0
+}
+
+.dw-assets td {
+    padding: 10px 8px 10px 0;
+    border-top: 1px solid #edf1f6
+}
+
+.dw-assets td:last-child {
+    padding-right: 0;
+    width: 90px
+}
+
+.dw-asset-label {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.dw-coin {
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 21px;
+    flex-shrink: 0
+}
+
+.dw-positive {
+    color: #069650 !important
+}
+
+.dw-negative {
+    color: #f2454e !important
+}
+
+.dw-bar {
+    height: 6px;
+    background: #e4e8ef;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 80px
+}
+
+.dw-bar i {
+    display: block;
+    height: 100%;
+    border-radius: 5px
+}
+
+.dw-allocation-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: calc(100% - 25px)
+}
+
+.dw-donut {
+    width: 145px;
+    height: 145px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: conic-gradient(#edb23c 0% 41.8%, #3068fe 41.8% 53.1%, #16a581 53.1% 63.1%, #7955de 63.1% 66.8%, #939baa 66.8% 100%);
+    display: grid;
+    place-items: center;
+    transform: rotate(0deg)
+}
+
+.dw-donut > div {
+    border-radius: 50%;
+    background: #fff;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 0 0 2px #fff
+}
+
+.dw-donut strong {
+    font-size: 18px
+}
+
+.dw-donut small {
+    color: #142039
+}
+
+.dw-allocation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    font-size: 9px
+}
+
+.dw-allocation li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0
+}
+
+.dw-allocation li i {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    flex-shrink: 0
+}
+
+.dw-allocation li b {
+    font-weight: 400;
+    margin-left: auto
+}
+
+.dw-market-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 0;
+    border-top: 1px solid #edf1f6;
+    font-size: 10px
+}
+
+.dw-market-row:first-of-type {
+    border-top: 0
+}
+
+.dw-market-row > svg {
+    width: 40px;
+    height: 25px;
+    margin-left: auto
+}
+
+.dw-market-row > span:last-child {
+    font-size: 10px
+}
+
+.dw-market {
+    grid-column: 3;
+    grid-row: 1
+}
+
+.dw-transaction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #edf1f6;
+    font-size: 10px
+}
+
+.dw-transaction-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f1f4f7;
+    font-size: 18px
+}
+
+.dw-transaction > span:nth-child(2) {
+    flex: 1
+}
+
+.dw-transaction-date {
+    font-size: 9px;
+    color: #73829d
+}
+
+.dw-transaction > span:nth-child(4) {
+    text-align: right;
+    min-width: 100px
+}
+
+.dw-status {
+    font-size: 9px;
+    color: #088b4e;
+    background: #e8f6ed;
+    border-radius: 20px;
+    padding: 5px 9px;
+    white-space: nowrap;
+    font-weight: 500
+}
+
+.dw-security-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #edf1f6;
+    font-size: 10px
+}
+
+.dw-security-row > span {
+    color: #078a53;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    background: #edf7f1;
+    border-radius: 50%;
+    flex-shrink: 0
+}
+
+.dw-security-row .dw-status {
+    margin-left: auto
+}
+
+.dw-security-row small {
+    font-size: 9px
+}
+
+.dw-earn {
+    padding: 0;
+    overflow: hidden
+}
+
+.dw-earn > div {
+    position: relative;
+    background: linear-gradient(120deg, #0b1b31, #3d3426);
+    padding: 22px 15px;
+    color: #efc366;
+    height: 90px
+}
+
+.dw-earn p {
+    font-size: 10px;
+    color: #d9dde3
+}
+
+.dw-earn > div > span {
+    position: absolute;
+    right: 20px;
+    bottom: -15px;
+    font-size: 70px;
+    color: #e5b554;
+    text-shadow: 0 3px #ab7527
+}
+
+.dw-earn button {
+    position: relative;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid #edf1f6;
+    width: 100%;
+    padding: 10px
+}
+
+.dw-earn button strong {
+    font-size: 10px
+}
+
+.dw-earn button small {
+    font-size: 9px
+}
+
+.dw-earn .dw-action-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 20px
+}
+
+.dw-footnote {
+    text-align: center;
+    color: #8390a4;
+    font-size: 9px;
+    margin: 12px 0 0
+}
+
+.dw-section-note {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff9e9;
+    border: 1px solid #eed6a2;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px
+}
+
+.dw-section-note span {
+    font-size: 10px;
+    color: #8c7849
+}
+
+.dw-section-note button {
+    margin-left: auto;
+    font-size: 10px
+}
+
+.dw-empty {
+    padding: 25px;
+    text-align: center;
+    color: #73829d
+}
+
+.dw-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #081b3080;
+    backdrop-filter: blur(5px);
+    display: grid;
+    place-items: center;
+    padding: 24px
+}
+
+.dw-modal {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 20px 80px #081b3040
+}
+
+.dw-modal h2 {
+    font-size: 25px;
+    margin: 20px 0 12px
+}
+
+.dw-modal p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #73829d
+}
+
+.dw-modal .dw-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 26px
+}
+
+.dw-modal .dw-modal-done {
+    width: 100%;
+    background: linear-gradient(120deg, #e1aa42, #f6d486);
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 12px
+}
+
+@media (min-width: 1550px) {
+    .dw-content {
+        padding: 0 25px 20px
+    }
+
+    .dw-hero {
+        min-height: 230px
+    }
+
+    .dw-hero-gryphon {
+        width: 370px;
+        height: 400px;
+        right: 85px
+    }
+
+    .dw-motto {
+        right: 40px;
+        top: 90px
+    }
+
+    .dw-panel {
+        padding: 20px
+    }
+
+    .dw-assets td, .dw-transaction, .dw-security-row {
+        padding-top: 16px;
+        padding-bottom: 16px
+    }
+
+    .dw-market-row {
+        padding: 15px 0
+    }
+
+    .dw-donut {
+        width: 180px;
+        height: 180px
+    }
+
+    .dw-donut > div {
+        width: 120px;
+        height: 120px
+    }
+
+    .dw-actions {
+        margin: 16px 0
+    }
+
+    .dw-actions button {
+        padding: 17px
+    }
+}
+
+@media (max-width: 1350px) {
+    .dw-grid {
+        grid-template-columns:minmax(320px, 1.65fr) minmax(220px, 1fr) minmax(185px, .8fr)
+    }
+
+    .dw-allocation-body {
+        flex-direction: column;
+        gap: 5px
+    }
+
+    .dw-allocation ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        width: 100%;
+        flex: 0
+    }
+
+    .dw-allocation li {
+        margin: 4px 0;
+        gap: 4px
+    }
+
+    .dw-donut {
+        width: 130px;
+        height: 130px
+    }
+
+    .dw-donut > div {
+        width: 88px;
+        height: 88px
+    }
+
+    .dw-chart {
+        width: 31%
+    }
+
+    .dw-hero-gryphon {
+        right: 10px;
+        width: 250px;
+        opacity: .75
+    }
+
+    .dw-motto {
+        right: 15px
+    }
+
+    .dw-transaction-date {
+        display: none
+    }
+
+    .dw-actions small {
+        font-size: 9px
+    }
+
+    .dw-actions button {
+        gap: 8px;
+        padding: 10px
+    }
+}
+
+@media (max-width: 1150px) {
+    .demo-wallet {
+        grid-template-columns:175px minmax(0, 1fr)
+    }
+
+    .dw-brand > span {
+        font-size: 25px
+    }
+
+    .dw-grid {
+        grid-template-columns:minmax(320px, 1.5fr) minmax(230px, 1fr)
+    }
+
+    .dw-market {
+        grid-column: 2;
+        grid-row: 2 / span 2
+    }
+
+    .dw-transactions {
+        grid-column: 1
+    }
+
+    .dw-security {
+        grid-column: 1
+    }
+
+    .dw-earn {
+        grid-column: 2;
+        grid-row: 1
+    }
+
+    .dw-allocation {
+        grid-column: 2;
+        grid-row: 4
+    }
+
+    .dw-allocation-body {
+        flex-direction: row
+    }
+
+    .dw-hero-gryphon {
+        opacity: .35;
+        right: -25px
+    }
+
+    .dw-motto {
+        display: none
+    }
+
+    .dw-chart {
+        width: 45%
+    }
+
+    .dw-actions {
+        gap: 5px
+    }
+
+    .dw-action-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 19px
+    }
+
+    .dw-actions small {
+        display: none
+    }
+
+    .dw-topbar {
+        padding: 0 18px;
+        gap: 10px
+    }
+}
+
+@media (max-width: 800px) {
+    .demo-wallet {
+        grid-template-columns:65px minmax(0, 1fr)
+    }
+
+    .dw-sidebar {
+        padding: 15px 7px
+    }
+
+    .dw-brand img {
+        width: 48px
+    }
+
+    .dw-brand > span, .dw-promo, .dw-exit {
+        display: none
+    }
+
+    .dw-navigation button {
+        font-size: 0;
+        padding: 10px;
+        gap: 0;
+        justify-content: center
+    }
+
+    .dw-navigation button > span {
+        font-size: 23px
+    }
+
+    .dw-grid {
+        grid-template-columns:minmax(0, 1fr)
+    }
+
+    .dw-grid > .dw-panel {
+        grid-column: auto;
+        grid-row: auto
+    }
+
+    .dw-allocation-body {
+        justify-content: center;
+        gap: 30px
+    }
+
+    .dw-allocation ul {
+        max-width: 180px;
+        display: block
+    }
+
+    .dw-allocation li {
+        margin: 12px 0;
+        gap: 8px
+    }
+
+    .dw-market-row svg {
+        width: 70px
+    }
+
+    .dw-topbar {
+        padding: 0 12px
+    }
+
+    .dw-profile > span:nth-child(2), .dw-profile > span:last-child, .dw-notifications {
+        display: none
+    }
+
+    .dw-search {
+        width: 100%;
+        max-width: none
+    }
+
+    .dw-demo-badge {
+        font-size: 8px;
+        padding: 5px
+    }
+
+    .dw-content {
+        padding: 0 12px 15px
+    }
+
+    .dw-hero {
+        padding: 20px;
+        gap: 10px
+    }
+
+    .dw-balance h1 {
+        font-size: 32px
+    }
+
+    .dw-chart {
+        display: none
+    }
+
+    .dw-hero-gryphon {
+        right: -30px;
+        opacity: .32
+    }
+
+    .dw-actions {
+        grid-template-columns:repeat(5, minmax(0, 1fr))
+    }
+
+    .dw-actions button {
+        flex-direction: column;
+        padding: 10px 2px;
+        gap: 6px;
+        font-size: 10px
+    }
+
+    .dw-actions b {
+        display: none
+    }
+
+    .dw-transactions .dw-status {
+        font-size: 8px;
+        padding: 4px 6px
+    }
+
+    .dw-transaction {
+        font-size: 9px;
+        gap: 6px
+    }
+
+    .dw-transaction > span:nth-child(4) {
+        min-width: 85px
+    }
+
+    .dw-section-note {
+        flex-wrap: wrap
+    }
+
+    .dw-section-note button {
+        margin-left: 0
+    }
+
+    .dw-earn > div {
+        height: 100px
+    }
+}
+
+/* Gryphon dark palette. */
+.demo-wallet {
+    background: radial-gradient(ellipse at 95% 90%, #b98b2720, transparent 55%), #091b2e;
+    color: #edf2f8;
+    color-scheme: dark
+}
+
+.dw-sidebar {
+    background: linear-gradient(145deg, #102a42, #091b2e);
+    border-color: #dfb75f24
+}
+
+.dw-navigation .selected, .dw-navigation button:hover {
+    background: linear-gradient(100deg, #dfb75f28, #dfb75f0b);
+    color: #efc875
+}
+
+.dw-navigation button:nth-child(8) {
+    border-color: #dfb75f24
+}
+
+.dw-brand {
+    color: #edc875
+}
+
+.dw-promo {
+    border: 1px solid #dfb75f30
+}
+
+.dw-exit {
+    color: #a8b7c9
+}
+
+.dw-topbar {
+    background: #0b2034;
+    border-bottom: 1px solid #dfb75f25;
+    margin-bottom: 14px
+}
+
+.dw-search {
+    background: #091b2e;
+    border-color: #6e8aa440
+}
+
+.dw-search input {
+    color: #edf2f8
+}
+
+.dw-search input::placeholder {
+    color: #8fa3ba
+}
+
+.dw-demo-badge {
+    background: #dfb75f12;
+    border-color: #dfb75f50;
+    color: #efc875
+}
+
+.demo-wallet small {
+    color: #9baec4
+}
+
+.dw-hero {
+    border: 1px solid #dfb75f35;
+    box-shadow: 0 10px 40px #0002;
+    background: linear-gradient(110deg, #102840, #183c59 60%, #09192c)
+}
+
+.dw-panel, .dw-actions button, .dw-earn button {
+    background: linear-gradient(140deg, #132e47, #0e2439);
+    border-color: #8ca7c323;
+    box-shadow: 0 5px 20px #00000010
+}
+
+.dw-panel-title button, .dw-panel-title a {
+    color: #e5bc6c
+}
+
+.dw-assets th {
+    color: #9baec4
+}
+
+.dw-assets td, .dw-market-row, .dw-transaction, .dw-security-row, .dw-earn button {
+    border-color: #8ca7c31c
+}
+
+.dw-bar {
+    background: #2a3e54
+}
+
+.dw-donut > div {
+    background: #112a42;
+    color: #edf2f8;
+    box-shadow: 0 0 0 2px #112a42
+}
+
+.dw-donut small {
+    color: #a9bad0
+}
+
+.dw-positive {
+    color: #4bdaa2 !important
+}
+
+.dw-negative {
+    color: #ff7c86 !important
+}
+
+.dw-transaction-icon {
+    background: #20394f;
+    color: #e7c074
+}
+
+.dw-transaction-date {
+    color: #9baec4
+}
+
+.dw-status {
+    color: #77e3b2;
+    background: #44c58d16
+}
+
+.dw-security-row > span {
+    background: #44c58d13;
+    color: #77e3b2
+}
+
+.dw-section-note {
+    background: #dfb75f0d;
+    border-color: #dfb75f35
+}
+
+.dw-section-note span {
+    color: #b9aa8f
+}
+
+.dw-empty, .dw-footnote {
+    color: #94a8bf
+}
+
+.dw-modal {
+    background: linear-gradient(145deg, #173752, #0b2034);
+    border: 1px solid #dfb75f40;
+    color: #edf2f8
+}
+
+.dw-modal p {
+    color: #afbed0
+}
+
+.dw-modal .dw-modal-done {
+    color: #102239
+}
+
+/* Uploaded wallet artwork and the complete gold brand logo. */
+.dw-brand {
+    padding: 5px 0 25px;
+    justify-content: center
+}
+
+.dw-brand .dw-brand-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain
+}
+
+.dw-hero-gryphon {
+    top: 0;
+    right: 0;
+    width: 32%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    mask-image: linear-gradient(to right, transparent, #000 22%);
+    pointer-events: none
+}
+
+.dw-motto {
+    z-index: 1;
+    text-shadow: 0 1px 8px #071421
+}
+
+.dw-promo img {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 35% center;
+    opacity: .8
+}
+
+.dw-promo > div {
+    z-index: 1;
+    text-shadow: 0 2px 8px #071421
+}
+
+@media (min-width: 1550px) {
+    .dw-hero-gryphon {
+        width: 34%;
+        height: 100%;
+        right: 0
+    }
+}
+
+@media (max-width: 1150px) {
+    .dw-hero-gryphon {
+        width: 36%;
+        right: 0;
+        opacity: .5
+    }
+}
+
+@media (max-width: 800px) {
+    .dw-brand {
+        padding: 5px 0 25px;
+        overflow: hidden;
+        justify-content: flex-start
+    }
+
+    .dw-brand .dw-brand-logo {
+        width: 130px;
+        max-width: none;
+        height: 48px;
+        object-fit: contain;
+        object-position: left;
+        flex-shrink: 0
+    }
+
+    .dw-hero-gryphon {
+        width: 52%;
+        right: 0;
+        opacity: .4
+    }
+}
+
+/* Keep the wallet sidebar compact and within the viewport. */
+.dw-sidebar {
+    min-height: 0;
+    overflow: hidden;
+    padding: 10px 8px;
+    gap: 0
+}
+
+.dw-brand {
+    flex-shrink: 0;
+    padding: 0 0 12px
+}
+
+.dw-navigation {
+    min-height: 0;
+    gap: 2px;
+    flex-shrink: 0
+}
+
+.dw-navigation button {
+    gap: 12px;
+    padding: 6px 10px;
+    line-height: 20px
+}
+
+.dw-navigation button > span {
+    font-size: 19px;
+    line-height: 20px
+}
+
+.dw-navigation button:nth-child(8) {
+    margin-top: 6px;
+    padding-top: 10px
+}
+
+.dw-promo {
+    min-height: 0;
+    height: clamp(90px, 23dvh, 160px);
+    flex: 0 1 160px;
+    margin-top: auto
+}
+
+.dw-promo > div {
+    margin: 0 8px 10px 90px;
+    padding-top: clamp(25px, 8dvh, 55px);
+    font-size: 11px
+}
+
+.dw-promo p {
+    margin: 7px 0 0;
+    line-height: 1.5
+}
+
+.dw-exit {
+    flex-shrink: 0;
+    padding-top: 8px;
+    font-size: 8px
+}
+
+@media (max-height: 600px) {
+    .dw-sidebar {
+        padding: 7px 8px
+    }
+
+    .dw-brand {
+        padding-bottom: 8px
+    }
+
+    .dw-navigation {
+        gap: 0
+    }
+
+    .dw-navigation button {
+        padding: 4px 10px
+    }
+
+    .dw-navigation button:nth-child(8) {
+        margin-top: 4px;
+        padding-top: 6px
+    }
+
+    .dw-promo {
+        flex-basis: 100px
+    }
+
+    .dw-promo > div {
+        padding-top: 18px
+    }
+
+    .dw-promo p {
+        display: none
+    }
+}
+
+@media (max-height: 470px) {
+    .dw-promo {
+        display: none
+    }
+
+    .dw-exit {
+        margin-top: auto
+    }
+
+    .dw-navigation button {
+        padding: 2px 10px
+    }
+
+    .dw-navigation button:nth-child(8) {
+        margin-top: 2px;
+        padding-top: 4px
+    }
+}
+
+@media (max-width: 800px) {
+    .dw-sidebar {
+        padding: 8px 6px
+    }
+
+    .dw-brand {
+        padding: 0 0 10px
+    }
+
+    .dw-navigation button {
+        padding: 6px;
+        gap: 0
+    }
+
+    .dw-navigation button:nth-child(8) {
+        padding-top: 10px
+    }
+}
+
+@media (max-height: 380px) {
+    .dw-brand .dw-brand-logo {
+        max-height: 30px;
+        width: auto;
+        max-width: 100%
+    }
+
+    .dw-brand {
+        padding-bottom: 4px
+    }
+
+    .dw-navigation button, .dw-navigation button:nth-child(8) {
+        padding: 1px 6px;
+        margin-top: 0
+    }
+
+    .dw-navigation button > span {
+        font-size: 16px;
+        line-height: 18px
+    }
+
+    .dw-exit {
+        padding-top: 4px
+    }
+}
+
+.dw-actions .dw-action-icon {
+    color: #0e2439
+}

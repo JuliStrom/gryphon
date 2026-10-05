@@ -1,0 +1,753 @@
+.dw-dashboard {
+    grid-template-columns:190px minmax(0, 1fr)
+}
+
+.dw-dashboard .dw-sidebar {
+    padding: 18px 12px;
+    overflow-y: auto
+}
+
+.dw-dashboard .dw-navigation a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 6px;
+    color: #a9bbcd;
+    font-size: 12px
+}
+
+.dw-dashboard .dw-navigation a span {
+    width: 22px;
+    text-align: center;
+    font-size: 21px
+}
+
+.dw-dashboard .dw-navigation a b {
+    font-weight: 500
+}
+
+.dw-dashboard .dw-navigation a:hover {
+    background: #dfb75f12;
+    color: #edc875
+}
+
+.dw-dashboard .dw-navigation a.selected {
+    color: #edc875
+}
+
+.dw-sidebar-note {
+    margin-top: auto;
+    padding: 28px 8px 16px
+}
+
+.dw-sidebar-note p {
+    color: #edc875;
+    font-size: 13px;
+    line-height: 1.6
+}
+
+.dw-sidebar-note small {
+    font-size: 9px;
+    line-height: 1.5
+}
+
+.dw-dashboard .dw-topbar {
+    height: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 24px;
+    margin-bottom: 0
+}
+
+.dw-dashboard .dw-search {
+    width: min(390px, 45%)
+}
+
+.dw-terminal-link {
+    color: #edc875;
+    font: 10px monospace;
+    white-space: nowrap
+}
+
+.dw-dashboard .dw-content {
+    padding: 20px 24px;
+    scroll-padding-top: 16px
+}
+
+.dw-page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-bottom: 12px
+}
+
+.dw-page-title p {
+    font: 9px monospace;
+    letter-spacing: 2px;
+    color: #b8a47a;
+    margin: 0 0 6px
+}
+
+.dw-page-title h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0
+}
+
+.dw-page-title > span {
+    color: #9baec4;
+    font: 10px monospace
+}
+
+.dw-dashboard-grid {
+    display: grid;
+    grid-template-columns:minmax(0, 2fr) minmax(270px, 1fr);
+    gap: 10px;
+    align-items: stretch
+}
+
+.dw-dashboard .dw-panel {
+    padding: 12px 14px;
+    border-radius: 8px
+}
+
+.dw-portfolio-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.dw-portfolio-top p {
+    color: #a9bbcd;
+    font-size: 12px;
+    margin: 0 0 10px
+}
+
+.dw-portfolio-top h2 {
+    font-size: clamp(28px, 3.2vw, 42px);
+    letter-spacing: -1px;
+    font-weight: 500;
+    margin: 0 0 8px
+}
+
+.dw-portfolio-top .dw-positive {
+    font: 12px monospace
+}
+
+.dw-portfolio-top small {
+    display: inline;
+    margin-left: 7px;
+    font-size: 10px;
+    color: #a9bbcd
+}
+
+.dw-portfolio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 20px 0 6px;
+    flex-wrap: wrap
+}
+
+.dw-portfolio-controls .dw-ranges {
+    margin: 0;
+    gap: 5px
+}
+
+.dw-dashboard .dw-ranges button {
+    border: 1px solid #dfb75f25;
+    min-height: 30px;
+    padding: 6px 10px
+}
+
+.dw-dashboard .dw-ranges button.active {
+    color: #102239;
+    background: #edc875;
+    border-color: #edc875
+}
+
+.dw-portfolio-controls > span {
+    font: 9px monospace;
+    color: #a9bbcd
+}
+
+.dw-portfolio-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    touch-action: pan-y
+}
+
+.dw-chart-caption {
+    font: 8px monospace;
+    color: #9baec4;
+    margin: 9px 0 0
+}
+
+.dw-portfolio-allocation .dw-donut {
+    width: 140px;
+    height: 140px;
+    margin: 12px auto 16px
+}
+
+.dw-portfolio-allocation .dw-donut > div {
+    width: 102px;
+    height: 102px
+}
+
+.dw-portfolio-allocation .dw-donut strong {
+    font-size: 18px
+}
+
+.dw-allocation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 12px
+}
+
+.dw-allocation-list li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px
+}
+
+.dw-allocation-list i {
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    flex-shrink: 0
+}
+
+.dw-allocation-list b {
+    margin-left: auto;
+    font: 10px monospace;
+    color: #a9bbcd
+}
+
+.dw-dashboard .dw-panel-title > span {
+    font: 9px monospace;
+    color: #9baec4
+}
+
+.dw-dashboard .dw-assets td {
+    padding: 13px 10px 13px 0
+}
+
+.dw-dashboard .dw-assets td:last-child {
+    width: auto
+}
+
+.dw-dashboard .dw-assets table {
+    min-width: 560px;
+    font-size: 11px
+}
+
+.dw-dashboard .dw-assets th {
+    font-size: 9px
+}
+
+.dw-activity-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid #8ca7c31c;
+    font-size: 11px
+}
+
+.dw-activity-row > div {
+    min-width: 0
+}
+
+.dw-activity-row > div:last-child {
+    margin-left: auto;
+    text-align: right;
+    font: 10px monospace
+}
+
+.dw-activity-row small {
+    font-size: 9px;
+    line-height: 1.5
+}
+
+.dw-portfolio-watchlist {
+    grid-column: 1/-1
+}
+
+.dw-watchlist-picker {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: 12px 0
+}
+
+.dw-dashboard .dw-watchlist-picker button {
+    padding: 7px 12px;
+    min-height: 32px;
+    border: 1px solid #dfb75f30;
+    border-radius: 4px;
+    color: #b8c7d7;
+    font: 10px monospace
+}
+
+.dw-dashboard .dw-watchlist-picker button[aria-pressed=true] {
+    color: #edc875;
+    background: #dfb75f12;
+    border-color: #dfb75f70
+}
+
+.dw-watchlist-grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(min(155px, 100%), 1fr));
+    gap: 9px
+}
+
+.dw-watchlist-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 12px;
+    border: 1px solid #8ca7c324;
+    border-radius: 6px;
+    background: #091b2e40;
+    min-width: 0
+}
+
+.dw-watchlist-card > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.dw-watchlist-card button {
+    font-size: 19px;
+    color: #9baec4
+}
+
+.dw-watchlist-card > span {
+    font-size: 9px;
+    color: #9baec4
+}
+
+.dw-watchlist-card > strong {
+    font: 15px monospace
+}
+
+.dw-watchlist-card a {
+    color: #edc875;
+    font: 9px monospace;
+    margin-top: auto;
+    padding-top: 4px
+}
+
+.dw-watchlist-empty {
+    font-size: 11px;
+    color: #9baec4;
+    line-height: 1.6
+}
+
+@media (max-width: 1150px) {
+    .dw-dashboard-grid {
+        grid-template-columns:minmax(0, 1fr) 270px
+    }
+
+    .dw-dashboard .dw-content {
+        padding: 18px
+    }
+
+    .dw-dashboard .dw-panel {
+        padding: 16px
+    }
+
+    .dw-portfolio-top > .dw-demo-badge {
+        display: none
+    }
+
+    .dw-activity-row {
+        flex-wrap: wrap
+    }
+
+    .dw-activity-row > div:last-child {
+        flex-basis: 100%;
+        padding-left: 38px;
+        text-align: left;
+        margin-left: 0
+    }
+}
+
+@media (max-width: 950px) {
+    .dw-dashboard-grid {
+        grid-template-columns:minmax(0, 1fr)
+    }
+
+    .dw-portfolio-watchlist {
+        grid-column: auto
+    }
+
+    .dw-portfolio-allocation {
+        display: grid;
+        grid-template-columns:150px minmax(0, 1fr);
+        gap: 8px 20px;
+        align-items: center
+    }
+
+    .dw-portfolio-allocation .dw-panel-title {
+        grid-column: 1/-1
+    }
+
+    .dw-portfolio-allocation .dw-donut {
+        margin: 0
+    }
+
+    .dw-activity-row > div:last-child {
+        flex-basis: auto;
+        margin-left: auto;
+        padding-left: 0;
+        text-align: right
+    }
+}
+
+@media (max-width: 800px) {
+    .dw-dashboard {
+        grid-template-columns:58px minmax(0, 1fr)
+    }
+
+    .dw-dashboard .dw-sidebar {
+        padding: 12px 5px
+    }
+
+    .dw-dashboard .dw-navigation a {
+        justify-content: center;
+        padding: 12px 5px
+    }
+
+    .dw-dashboard .dw-navigation a b, .dw-dashboard .dw-sidebar-note, .dw-dashboard .dw-exit {
+        display: none
+    }
+
+    .dw-dashboard .dw-brand .dw-brand-logo {
+        width: 135px;
+        height: 40px
+    }
+
+    .dw-dashboard .dw-topbar {
+        height: auto;
+        min-height: 92px;
+        padding: 10px;
+        gap: 8px
+    }
+
+    .dw-dashboard .dw-search {
+        order: 3;
+        width: 100%;
+        max-width: none
+    }
+
+    .dw-dashboard .dw-topbar > .dw-demo-badge {
+        margin-left: 0
+    }
+
+    .dw-terminal-link {
+        margin-left: auto;
+        font-size: 9px
+    }
+
+    .dw-dashboard .dw-content {
+        padding: 14px 10px
+    }
+
+    .dw-page-title > span {
+        display: none
+    }
+
+    .dw-page-title h1 {
+        font-size: 25px
+    }
+
+    .dw-dashboard .dw-panel {
+        padding: 12px
+    }
+
+    .dw-portfolio-controls > span {
+        font-size: 8px
+    }
+
+    .dw-portfolio-top small {
+        display: block;
+        margin: 5px 0 0
+    }
+
+    .dw-portfolio-allocation {
+        grid-template-columns:110px minmax(0, 1fr);
+        gap: 10px
+    }
+
+    .dw-portfolio-allocation .dw-donut {
+        width: 105px;
+        height: 105px
+    }
+
+    .dw-portfolio-allocation .dw-donut > div {
+        width: 77px;
+        height: 77px
+    }
+
+    .dw-portfolio-allocation .dw-donut strong {
+        font-size: 14px
+    }
+
+    .dw-portfolio-allocation .dw-donut small {
+        font-size: 8px
+    }
+
+    .dw-allocation-list {
+        grid-template-columns:1fr;
+        gap: 9px
+    }
+
+    .dw-activity-row {
+        font-size: 10px
+    }
+
+    .dw-activity-row > div:last-child {
+        flex-basis: 100%;
+        margin-left: 0;
+        padding-left: 38px;
+        text-align: left
+    }
+}
+
+/* Compact portfolio panels. */
+.dw-dashboard .dw-dashboard-grid > .dw-panel {
+    padding: 12px 14px
+}
+
+.dw-dashboard-grid .dw-panel-title {
+    margin-bottom: 8px
+}
+
+.dw-dashboard-grid .dw-panel-title h2 {
+    font-size: 12px
+}
+
+.dw-dashboard .dw-portfolio-top p {
+    font-size: 11px;
+    margin-bottom: 6px
+}
+
+.dw-dashboard .dw-portfolio-top h2 {
+    font-size: clamp(25px, 2.5vw, 34px);
+    margin-bottom: 6px
+}
+
+.dw-dashboard .dw-portfolio-top .dw-positive {
+    font-size: 11px
+}
+
+.dw-dashboard .dw-portfolio-top small {
+    font-size: 9px
+}
+
+.dw-dashboard .dw-portfolio-controls {
+    margin: 12px 0 3px;
+    gap: 8px
+}
+
+.dw-dashboard .dw-ranges button {
+    min-height: 26px;
+    padding: 4px 8px;
+    font-size: 9px
+}
+
+.dw-dashboard .dw-portfolio-svg {
+    height: 165px;
+    max-height: 165px
+}
+
+.dw-dashboard .dw-chart-caption {
+    margin-top: 5px;
+    font-size: 7px
+}
+
+.dw-dashboard .dw-portfolio-allocation .dw-donut {
+    width: 110px;
+    height: 110px;
+    margin: 6px auto 10px
+}
+
+.dw-dashboard .dw-portfolio-allocation .dw-donut > div {
+    width: 80px;
+    height: 80px
+}
+
+.dw-dashboard .dw-portfolio-allocation .dw-donut strong {
+    font-size: 15px
+}
+
+.dw-dashboard .dw-portfolio-allocation .dw-donut small {
+    font-size: 8px
+}
+
+.dw-dashboard .dw-allocation-list {
+    gap: 8px
+}
+
+.dw-dashboard .dw-allocation-list li {
+    font-size: 10px
+}
+
+.dw-dashboard .dw-allocation-list b {
+    font-size: 9px
+}
+
+.dw-dashboard .dw-assets td {
+    padding: 8px 8px 8px 0
+}
+
+.dw-dashboard .dw-assets table {
+    font-size: 10px
+}
+
+.dw-dashboard .dw-assets th {
+    padding-bottom: 6px;
+    font-size: 8px
+}
+
+.dw-dashboard .dw-asset-label {
+    gap: 6px
+}
+
+.dw-dashboard .dw-coin {
+    width: 24px;
+    height: 24px;
+    font-size: 17px
+}
+
+.dw-dashboard .dw-asset-label small {
+    font-size: 8px;
+    margin-top: 2px
+}
+
+.dw-dashboard .dw-activity-row {
+    padding: 10px 0;
+    gap: 8px;
+    font-size: 10px
+}
+
+.dw-dashboard .dw-activity-row small {
+    font-size: 8px;
+    margin-top: 3px
+}
+
+.dw-dashboard .dw-transaction-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 16px
+}
+
+.dw-dashboard .dw-activity-row > div:last-child {
+    font-size: 9px
+}
+
+.dw-dashboard .dw-watchlist-picker {
+    gap: 5px;
+    margin: 8px 0
+}
+
+.dw-dashboard .dw-watchlist-picker button {
+    min-height: 27px;
+    padding: 4px 9px;
+    font-size: 9px
+}
+
+.dw-dashboard .dw-watchlist-grid {
+    gap: 7px;
+    grid-template-columns:repeat(auto-fill, minmax(min(140px, 100%), 1fr))
+}
+
+.dw-dashboard .dw-watchlist-card {
+    gap: 5px;
+    padding: 9px 10px
+}
+
+.dw-dashboard .dw-watchlist-card > strong {
+    font-size: 13px
+}
+
+.dw-dashboard .dw-watchlist-card > span {
+    font-size: 8px
+}
+
+.dw-dashboard .dw-watchlist-card a {
+    font-size: 8px;
+    padding-top: 2px
+}
+
+.dw-dashboard .dw-watchlist-empty {
+    font-size: 10px;
+    margin: 8px 0 0
+}
+
+.dw-dashboard .dw-footnote {
+    font-size: 8px;
+    margin-top: 9px
+}
+
+@media (max-width: 950px) {
+    .dw-dashboard .dw-portfolio-allocation .dw-donut {
+        margin: 0
+    }
+
+    .dw-dashboard .dw-portfolio-allocation {
+        grid-template-columns:110px minmax(0, 1fr);
+        gap: 6px 14px
+    }
+}
+
+@media (max-width: 800px) {
+    .dw-dashboard .dw-dashboard-grid > .dw-panel {
+        padding: 10px 12px
+    }
+
+    .dw-dashboard .dw-portfolio-svg {
+        height: 140px;
+        max-height: 140px
+    }
+
+    .dw-dashboard .dw-activity-row > div:last-child {
+        padding-left: 32px
+    }
+
+    .dw-dashboard .dw-portfolio-allocation {
+        grid-template-columns:90px minmax(0, 1fr)
+    }
+
+    .dw-dashboard .dw-portfolio-allocation .dw-donut {
+        width: 90px;
+        height: 90px
+    }
+
+    .dw-dashboard .dw-portfolio-allocation .dw-donut > div {
+        width: 66px;
+        height: 66px
+    }
+
+    .dw-dashboard .dw-portfolio-allocation .dw-donut strong {
+        font-size: 12px
+    }
+
+    .dw-dashboard .dw-portfolio-allocation .dw-donut small {
+        font-size: 7px
+    }
+}

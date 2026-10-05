@@ -1,0 +1,115 @@
+.dw-dashboard .dw-watchlist-grid {
+    grid-template-columns:repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+    gap: 5px;
+    margin-top: 5px;
+    overflow: visible
+}
+
+.dw-watchlist-count {
+    color: #9baec4;
+    font: 10px monospace;
+    margin-left: 5px
+}
+
+.dw-dashboard .dw-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 7px 13px;
+    border: 1px solid #dfb75f40;
+    border-radius: 4px;
+    background: #dfb75f0b;
+    color: #edc875;
+    font: 11px monospace;
+    white-space: nowrap
+}
+
+.dw-dashboard .dw-back:hover {
+    background: #dfb75f18;
+    border-color: #dfb75f80
+}
+
+.dw-dashboard .dw-watchlist-card > span {
+    overflow-wrap: anywhere
+}
+
+.dw-dashboard .dw-watchlist-card button {
+    color: #9baec4;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px
+}
+
+.dw-dashboard .dw-watchlist-card button[aria-pressed=true] {
+    color: #edc875
+}
+
+.dw-dashboard .dw-watchlist-card button:hover {
+    background: #dfb75f15
+}
+
+.dw-watchlist-favorite {
+    border-color: #dfb75f55;
+    background: #dfb75f08
+}
+
+.dw-watchlist-status {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #ff9da6
+}
+
+.dw-dashboard .dw-watchlist-status button {
+    color: #edc875;
+    padding: 5px 8px;
+    border: 1px solid #dfb75f40;
+    border-radius: 4px
+}
+
+.dw-dashboard .dw-portfolio-watchlist {
+    padding: 7px 9px
+}
+
+.dw-dashboard .dw-portfolio-watchlist .dw-panel-title {
+    margin-bottom: 4px
+}
+
+.dw-dashboard .dw-portfolio-watchlist .dw-panel-title h2 {
+    font-size: 11px
+}
+
+.dw-dashboard .dw-portfolio-watchlist .dw-panel-title small {
+    font-size: 7px;
+    margin-top: 2px
+}
+
+.dw-dashboard .dw-watchlist-card {
+    padding: 5px 6px;
+    gap: 3px;
+    border-radius: 4px
+}
+
+.dw-dashboard .dw-watchlist-card > div > strong {
+    font-size: 10px
+}
+
+.dw-dashboard .dw-watchlist-card > strong {
+    font-size: 11px
+}
+
+.dw-dashboard .dw-watchlist-card > span {
+    font-size: 7px;
+    line-height: 1.2
+}
+
+.dw-dashboard .dw-watchlist-card button {
+    width: 22px;
+    height: 22px;
+    font-size: 15px
+}
+
+.dw-dashboard .dw-watchlist-card a {
+    font-size: 7px;
+    padding-top: 1px
+}
