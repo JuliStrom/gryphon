@@ -1,0 +1,1279 @@
+/* Phone layouts shared by all Gryphon pages. */
+@media (max-width: 900px) {
+    :root[data-theme="dark"] .terminal-nav {
+        background: transparent;
+        border: 0
+    }
+}
+
+@media (max-width: 700px) {
+    .landing {
+        padding: 0 max(5%, env(safe-area-inset-left));
+        padding-right: max(5%, env(safe-area-inset-right))
+    }
+
+    .landing header {
+        height: auto;
+        min-height: 112px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 0
+    }
+
+    .landing header .brand {
+        align-self: center
+    }
+
+    .landing header .header-logo {
+        width: 155px;
+        height: auto
+    }
+
+    .landing header .header-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin: 0;
+        gap: 8px
+    }
+
+    .landing header .header-wallet, .landing header .header-launch {
+        height: 40px;
+        min-height: 40px;
+        margin: 0;
+        padding: 0 13px;
+        font-size: 11px;
+        justify-self: auto
+    }
+
+    .landing header .header-social {
+        height: 40px;
+        width: 40px;
+        flex-shrink: 0
+    }
+
+    .landing .hero {
+        padding-top: clamp(25px, 7dvh, 60px)
+    }
+
+    .landing .hero .pyramid-slogan {
+        font-size: 5.8cqw;
+        line-height: 1.45;
+        letter-spacing: -.04em
+    }
+
+    .landing .hero-caption {
+        font-size: 8px;
+        letter-spacing: 1px;
+        justify-content: center;
+        margin-top: 18px
+    }
+
+    .landing footer {
+        min-height: 75px;
+        padding: 10px 0 max(20px, env(safe-area-inset-bottom));
+        justify-content: center
+    }
+
+    .landing footer p {
+        display: none
+    }
+
+    .landing .enter-link > span {
+        min-height: 44px;
+        height: 48px;
+        padding: 0 24px;
+        font-size: 12px
+    }
+
+    .landing.realm {
+        grid-template-rows:auto minmax(70px, 1fr) auto auto
+    }
+
+    .realm .realm-gryphon {
+        width: 100%;
+        transform: translate(-50%, -50%)
+    }
+
+    .realm .realm-back {
+        top: 12px;
+        min-height: 35px;
+        display: flex;
+        align-items: center
+    }
+
+    .realm .realm-information {
+        grid-template-columns:1fr;
+        gap: 12px;
+        padding: 12px 0
+    }
+
+    .realm .realm-project {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px
+    }
+
+    .realm .realm-project h1 {
+        font-size: clamp(18px, 5vw, 23px);
+        margin: 0
+    }
+
+    .realm .realm-action {
+        min-height: 44px;
+        flex-shrink: 0;
+        font-size: 10px;
+        padding: 9px 13px
+    }
+
+    .realm .realm-info {
+        padding-top: 0
+    }
+
+    .realm .realm-info h2 {
+        font-size: 19px;
+        margin-bottom: 8px
+    }
+
+    .realm .realm-description {
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 9px
+    }
+
+    .realm .realm-tags {
+        gap: 5px
+    }
+
+    .realm .realm-info .realm-tags span {
+        font-size: 8px;
+        padding: 5px 8px
+    }
+
+    .realm .realm-manifesto {
+        margin-top: 5px
+    }
+
+    .realm .realm-manifesto summary {
+        min-height: 36px;
+        align-items: center
+    }
+
+    .realm .realm-bottom {
+        gap: 10px;
+        font-size: 7px;
+        letter-spacing: .3px;
+        padding: 9px 0 max(10px, env(safe-area-inset-bottom))
+    }
+
+    .wallet-page {
+        padding: 0 5%;
+        padding-bottom: env(safe-area-inset-bottom)
+    }
+
+    .wallet-page .wallet-page-header {
+        height: 70px;
+        gap: 15px
+    }
+
+    .wallet-page .wallet-page-logo {
+        width: 145px
+    }
+
+    .wallet-page .wallet-back {
+        min-height: 44px;
+        display: flex;
+        align-items: center
+    }
+
+    .wallet-page .wallet-card {
+        flex-shrink: 0;
+        margin: 20px 0;
+        padding: 22px 18px
+    }
+
+    .wallet-page .wallet-choice {
+        min-height: 64px;
+        padding: 12px 10px;
+        gap: 10px
+    }
+
+    .wallet-page .wallet-choice-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 20px
+    }
+
+    .wallet-page .wallet-choice-name {
+        min-width: 0
+    }
+
+    .wallet-page .wallet-choice-name strong {
+        font-size: 12px
+    }
+
+    .wallet-page .wallet-choice-status {
+        font-size: 9px
+    }
+
+    .wallet-page .wallet-eyebrow {
+        letter-spacing: 1px;
+        line-height: 1.6
+    }
+
+    .wallet-page .wallet-page-footer {
+        margin-top: auto;
+        padding: 12px 0
+    }
+}
+
+@media (max-width: 650px) {
+    .terminal {
+        padding: 0 6px;
+        grid-template-rows:94px minmax(0, 1fr) 22px
+    }
+
+    .terminal .terminal-header {
+        height: 94px;
+        grid-template-rows:48px 40px;
+        column-gap: 8px
+    }
+
+    .terminal .terminal-logo {
+        width: 100px
+    }
+
+    .terminal .terminal-header-actions {
+        gap: 7px
+    }
+
+    .terminal .terminal-header-actions .terminal-status {
+        font-size: 8px;
+        gap: 4px
+    }
+
+    .terminal .terminal-wallet {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 10px
+    }
+
+    .terminal .terminal-social {
+        width: 28px;
+        height: 30px
+    }
+
+    .terminal .terminal-nav {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        min-width: 0
+    }
+
+    .terminal .terminal-nav .terminal-tab {
+        min-height: 38px;
+        padding: 8px 16px;
+        font-size: 10px
+    }
+
+    .terminal .terminal-workspace {
+        min-height: 0
+    }
+
+    .terminal .market-sidebar {
+        flex-basis: 86px
+    }
+
+    .terminal .market-row {
+        min-width: 108px;
+        width: 108px;
+        padding: 9px
+    }
+
+    .terminal .terminal-center {
+        min-height: 0;
+        grid-template-rows:minmax(0, 1fr) 112px
+    }
+
+    .terminal .chart-heading {
+        padding: 8px;
+        gap: 5px
+    }
+
+    .terminal .chart-heading h1 {
+        font-size: 13px
+    }
+
+    .terminal .chart-quote {
+        gap: 5px;
+        font-size: 9px
+    }
+
+    .terminal .chart-quote strong {
+        font-size: 11px
+    }
+
+    .terminal .timeframes button {
+        min-height: 32px;
+        padding: 6px 11px
+    }
+
+    .terminal .chart-tools {
+        gap: 4px;
+        flex-wrap: wrap;
+        padding: 4px 0
+    }
+
+    .terminal .chart-tools button {
+        min-height: 30px;
+        padding: 5px 7px;
+        font-size: 8px
+    }
+
+    .terminal .chart-ohlc {
+        display: none
+    }
+
+    .terminal .chart-hint {
+        font-size: 7px;
+        line-height: 1.4;
+        margin: 5px 0
+    }
+
+    .terminal .overview-tabs {
+        padding: 3px 6px;
+        gap: 3px
+    }
+
+    .terminal .overview-tabs button {
+        min-height: 30px;
+        font-size: 9px
+    }
+
+    .terminal .overview-content {
+        padding: 10px 8px;
+        gap: 6px
+    }
+
+    .terminal .overview-content > div {
+        gap: 7px;
+        min-width: 0
+    }
+
+    .terminal .overview-content strong {
+        font-size: 10px;
+        overflow-wrap: anywhere
+    }
+
+    .terminal .watchlist-content {
+        max-height: 72px;
+        padding: 5px 12px
+    }
+
+    .terminal .market-error {
+        padding: 8px;
+        font-size: 10px;
+        line-height: 1.4
+    }
+}
+
+@media (max-width: 800px) {
+    .demo-wallet {
+        grid-template-columns:58px minmax(0, 1fr)
+    }
+
+    .demo-wallet .dw-sidebar {
+        padding: 8px 4px
+    }
+
+    .demo-wallet .dw-brand .dw-brand-logo {
+        width: 125px;
+        height: 44px
+    }
+
+    .demo-wallet .dw-navigation button {
+        min-height: 38px;
+        padding: 7px 4px
+    }
+
+    .demo-wallet .dw-navigation button:nth-child(8) {
+        margin-top: 4px;
+        padding-top: 7px
+    }
+
+    .demo-wallet .dw-topbar {
+        height: auto;
+        min-height: 90px;
+        display: grid;
+        grid-template-columns:minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 10px
+    }
+
+    .demo-wallet .dw-search {
+        grid-column: 1/-1;
+        grid-row: 2;
+        width: 100%;
+        height: 35px
+    }
+
+    .demo-wallet .dw-topbar > .dw-demo-badge {
+        margin: 0;
+        justify-self: start;
+        width: fit-content
+    }
+
+    .demo-wallet .dw-profile {
+        justify-self: end
+    }
+
+    .demo-wallet .dw-content {
+        padding: 0 10px max(15px, env(safe-area-inset-bottom))
+    }
+
+    .demo-wallet .dw-hero {
+        min-height: 185px;
+        padding: 18px 14px
+    }
+
+    .demo-wallet .dw-balance {
+        max-width: 100%;
+        min-width: 0
+    }
+
+    .demo-wallet .dw-balance h1 {
+        font-size: clamp(26px, 7vw, 34px)
+    }
+
+    .demo-wallet .dw-balance > strong {
+        font-size: 12px
+    }
+
+    .demo-wallet .dw-balance > strong span {
+        margin-left: 4px;
+        font-size: 10px
+    }
+
+    .demo-wallet .dw-ranges {
+        gap: 4px;
+        flex-wrap: wrap;
+        margin-top: 20px
+    }
+
+    .demo-wallet .dw-ranges button {
+        min-height: 32px;
+        padding: 6px 8px;
+        font-size: 9px
+    }
+
+    .demo-wallet .dw-actions {
+        grid-template-columns:repeat(5, minmax(0, 1fr));
+        gap: 4px
+    }
+
+    .demo-wallet .dw-actions button {
+        min-height: 68px;
+        border-radius: 8px;
+        font-size: 9px
+    }
+
+    .demo-wallet .dw-actions .dw-action-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 20px
+    }
+
+    .demo-wallet .dw-panel {
+        padding: 12px 10px
+    }
+
+    .demo-wallet .dw-assets table {
+        min-width: 470px
+    }
+
+    .demo-wallet .dw-assets .dw-table-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #dfb75f60 transparent
+    }
+
+    .demo-wallet .dw-allocation-body {
+        gap: 12px;
+        flex-wrap: wrap
+    }
+
+    .demo-wallet .dw-allocation ul {
+        min-width: 95px;
+        max-width: 140px
+    }
+
+    .demo-wallet .dw-transaction {
+        display: grid;
+        grid-template-columns:25px minmax(0, 1fr) auto;
+        gap: 7px;
+        align-items: center
+    }
+
+    .demo-wallet .dw-transaction > span:nth-child(4) {
+        min-width: 0;
+        font-size: 9px
+    }
+
+    .demo-wallet .dw-transaction > .dw-status {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: -3px
+    }
+
+    .demo-wallet .dw-transaction small {
+        font-size: 8px;
+        overflow-wrap: anywhere
+    }
+
+    .demo-wallet .dw-security-row {
+        gap: 7px;
+        font-size: 9px
+    }
+
+    .demo-wallet .dw-security-row > div {
+        min-width: 0
+    }
+
+    .demo-wallet .dw-security-row small {
+        font-size: 8px
+    }
+
+    .demo-wallet .dw-status {
+        font-size: 8px;
+        padding: 4px 6px
+    }
+
+    .demo-wallet .dw-section-note {
+        gap: 8px;
+        font-size: 11px
+    }
+
+    .demo-wallet .dw-section-note span {
+        font-size: 9px
+    }
+
+    .demo-wallet .dw-modal {
+        padding: 25px;
+        max-height: 90dvh;
+        overflow-y: auto
+    }
+
+    .demo-wallet .dw-modal-close {
+        width: 40px;
+        height: 40px
+    }
+}
+
+@media (max-width: 360px) {
+    .landing header .header-wallet, .landing header .header-launch {
+        padding: 0 9px;
+        font-size: 10px
+    }
+
+    .landing header .header-actions {
+        gap: 6px
+    }
+
+    .wallet-page .wallet-choice {
+        gap: 7px;
+        padding: 11px 8px
+    }
+
+    .wallet-page .wallet-choice-name strong {
+        font-size: 11px
+    }
+
+    .wallet-page .wallet-choice-status {
+        font-size: 8px
+    }
+
+    .terminal .terminal-header-actions .terminal-status {
+        display: none
+    }
+
+    .terminal .chart-quote > span {
+        display: none
+    }
+
+    .terminal .timeframes button {
+        padding: 6px 9px
+    }
+
+    .demo-wallet .dw-ranges button {
+        padding: 6px
+    }
+}
+
+@media (max-height: 600px) and (max-width: 700px) {
+    .landing header {
+        min-height: 92px;
+        padding: 7px 0;
+        gap: 6px
+    }
+
+    .landing header .header-logo {
+        width: 125px
+    }
+
+    .landing header .header-wallet, .landing header .header-launch, .landing header .header-social {
+        height: 34px;
+        min-height: 34px
+    }
+
+    .landing .hero {
+        padding-top: 15px
+    }
+
+    .landing .hero .pyramid-slogan {
+        font-size: min(5.8cqw, 6dvh);
+        line-height: 1.25
+    }
+
+    .landing footer {
+        min-height: 56px;
+        padding-bottom: 10px
+    }
+
+    .realm .realm-information {
+        gap: 7px;
+        padding: 8px 0
+    }
+
+    .realm .realm-info h2 {
+        font-size: 16px;
+        margin-bottom: 5px
+    }
+
+    .realm .realm-description {
+        font-size: 11px;
+        line-height: 1.4
+    }
+
+    .realm .realm-manifesto {
+        display: none
+    }
+}
+
+@media (max-height: 470px) and (max-width: 900px) {
+    .landing.realm {
+        grid-template-rows:65px minmax(30px, 1fr) auto auto
+    }
+
+    .landing header {
+        min-height: 65px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between
+    }
+
+    .landing header .header-logo {
+        width: 125px
+    }
+
+    .realm .realm-information {
+        grid-template-columns:1fr 1.5fr;
+        gap: 15px
+    }
+
+    .realm .realm-project {
+        display: block
+    }
+
+    .realm .realm-project h1 {
+        margin-bottom: 8px;
+        font-size: 17px
+    }
+
+    .realm .realm-tags, .realm .realm-back {
+        display: none
+    }
+
+    .terminal .terminal-center {
+        grid-template-rows:minmax(0, 1fr) 82px
+    }
+
+    .terminal .chart-tools, .terminal .chart-hint {
+        display: none
+    }
+
+    .terminal .market-sidebar {
+        flex-basis: 70px
+    }
+
+    .terminal .overview-content {
+        padding: 5px 8px
+    }
+
+    .demo-wallet .dw-navigation button {
+        min-height: 24px;
+        padding: 2px 4px
+    }
+
+    .demo-wallet .dw-navigation button:nth-child(8) {
+        padding-top: 2px;
+        margin-top: 0
+    }
+}
+
+/* Prevent intrinsic chart and header widths from widening the viewport. */
+.terminal {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns:minmax(0, 1fr)
+}
+
+.terminal .terminal-header, .terminal .terminal-workspace, .terminal .terminal-center, .terminal .chart-panel, .terminal .price-chart {
+    min-width: 0
+}
+
+.terminal .market-row {
+    padding: 5px 8px;
+}
+
+.terminal .market-row > span {
+    gap: 2px
+}
+
+.terminal .market-row strong {
+    font-size: 11px
+}
+
+.terminal .market-row small {
+    font-size: 9px
+}
+
+.terminal .market-row b {
+    font-size: 10px
+}
+
+.terminal .market-search {
+    padding: 8px 10px
+}
+
+.terminal .market-search input {
+    padding: 7px 8px
+}
+
+.terminal .market-columns {
+    padding: 3px 10px 7px
+}
+
+.terminal .market-source {
+    padding: 9px 10px
+}
+
+@media (max-width: 650px) {
+    .terminal .market-sidebar {
+        flex-basis: 72px
+    }
+
+    .terminal .market-row {
+        padding: 5px 8px;
+        min-width: 100px;
+        width: 100px
+    }
+
+    .terminal .market-list {
+        padding: 3px
+    }
+}
+
+.terminal .terminal-center {
+    grid-template-rows:minmax(0, 70fr) minmax(0, 15fr) minmax(0, 15fr);
+    overflow: hidden
+}
+
+.sentiment-panel {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 12px 6px;
+    background: var(--panel);
+    border: 1px solid var(--border)
+}
+
+.sentiment-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px
+}
+
+.sentiment-heading h2 {
+    margin: 0;
+    color: var(--gold);
+    font: 10px monospace;
+    letter-spacing: 1px
+}
+
+.sentiment-heading h2 span {
+    display: block;
+    color: var(--muted);
+    font-size: 8px;
+    letter-spacing: 0;
+    margin-top: 4px
+}
+
+.sentiment-value {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    font: 10px monospace;
+    flex-shrink: 0
+}
+
+.sentiment-value strong {
+    font-size: 20px;
+    font-weight: 500
+}
+
+.sentiment-value small {
+    font-size: 9px;
+    color: var(--muted);
+    margin-left: 3px
+}
+
+.sentiment-svg {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: block
+}
+
+.sentiment-zone-label {
+    fill: var(--muted);
+    font: 8px Arial, Helvetica, sans-serif
+}
+
+.sentiment-tick {
+    fill: var(--muted);
+    font: 7px monospace
+}
+
+.sentiment-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 3px;
+    color: var(--muted);
+    font: 8px monospace
+}
+
+.sentiment-footer a {
+    color: var(--gold)
+}
+
+.sentiment-message {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 11px
+}
+
+.sentiment-message button {
+    border: 1px solid var(--border);
+    background: none;
+    color: var(--gold);
+    padding: 5px 8px;
+    cursor: pointer
+}
+
+@media (max-width: 650px) {
+    .sentiment-panel {
+        padding: 5px 8px
+    }
+
+    .sentiment-value {
+        gap: 5px;
+        font-size: 8px
+    }
+
+    .sentiment-value strong {
+        font-size: 15px
+    }
+
+    .sentiment-heading h2 {
+        font-size: 9px
+    }
+}
+
+.terminal .sentiment-panel {
+    padding-top: 5px;
+    padding-bottom: 4px;
+    overflow: hidden
+}
+
+.terminal .sentiment-heading {
+    margin-bottom: 2px
+}
+
+.terminal .sentiment-heading h2 span {
+    display: inline;
+    margin-left: 8px;
+    font-size: 7px
+}
+
+.terminal .sentiment-value strong {
+    font-size: 16px
+}
+
+.terminal .sentiment-value {
+    font-size: 9px
+}
+
+.terminal .sentiment-footer {
+    font-size: 7px;
+    margin-top: 1px
+}
+
+.terminal .market-overview {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+.terminal .overview-tabs {
+    flex-shrink: 0;
+    padding: 3px 8px;
+    gap: 8px
+}
+
+.terminal .overview-tabs button {
+    min-height: 24px;
+    padding: 4px 7px;
+    font-size: 9px
+}
+
+.terminal .overview-content {
+    flex: 1;
+    min-height: 0;
+    align-content: center;
+    overflow: auto;
+    padding: 7px 10px;
+    gap: 8px
+}
+
+.terminal .overview-content > div {
+    gap: 5px
+}
+
+.terminal .overview-content strong {
+    font-size: 12px
+}
+
+.terminal .overview-content span {
+    font-size: 8px
+}
+
+.terminal .watchlist-content {
+    flex: 1;
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+    padding: 4px 10px
+}
+
+.terminal .watchlist-content button {
+    padding: 6px 0;
+    font-size: 10px
+}
+
+.terminal .watchlist-content p {
+    margin: 0;
+    padding: 4px;
+    font-size: 10px
+}
+
+.terminal .terminal-center-watchlist {
+    grid-template-rows:minmax(0, 70fr) minmax(0, 15fr) auto
+}
+
+.terminal-center-watchlist .market-overview {
+    overflow: visible
+}
+
+.terminal .watchlist-content {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(145px, 100%), 1fr));
+    gap: 8px;
+    flex: none;
+    overflow: visible;
+    padding: 8px 10px;
+    align-content: start
+}
+
+.terminal .watchlist-content button {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    min-height: 54px;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #dfb75f08;
+    text-align: left;
+    overflow-wrap: anywhere
+}
+
+.terminal .watchlist-content button:hover {
+    border-color: #dfb75f70;
+    background: #dfb75f12
+}
+
+.terminal .watchlist-content button strong {
+    color: var(--gold);
+    font-size: 12px
+}
+
+.terminal .watchlist-content button span {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.terminal .watchlist-content p {
+    grid-column: 1/-1
+}
+
+@media (max-width: 650px) {
+    .terminal .watchlist-content {
+        grid-template-columns:repeat(auto-fit, minmax(min(120px, 100%), 1fr));
+        gap: 6px;
+        padding: 6px
+    }
+
+    .terminal .watchlist-content button {
+        min-height: 48px;
+        padding: 7px 8px
+    }
+}
+
+@media (max-width: 650px) {
+    .terminal .sentiment-heading h2 span {
+        display: none
+    }
+
+    .terminal .sentiment-footer {
+        font-size: 6px
+    }
+
+    .terminal .overview-content strong {
+        font-size: 10px
+    }
+
+    .terminal .overview-content span {
+        font-size: 7px
+    }
+
+    .terminal .overview-tabs {
+        padding: 1px 6px
+    }
+}
+
+@media (max-height: 600px) {
+    .terminal .sentiment-heading h2 span, .terminal .sentiment-value > span {
+        display: none
+    }
+
+    .terminal .sentiment-value strong {
+        font-size: 13px
+    }
+
+    .terminal .sentiment-footer {
+        font-size: 6px
+    }
+
+    .terminal .overview-tabs button {
+        min-height: 20px;
+        padding: 2px 6px
+    }
+
+    .terminal .overview-content {
+        padding: 3px 8px
+    }
+
+    .terminal .overview-content > div {
+        gap: 3px
+    }
+}
+
+/* Fit the wallet picker inside the viewport, with scrolling for short screens. */
+.wallet-page {
+    display: grid;
+    grid-template-rows:auto minmax(0, 1fr) auto;
+    justify-items: center;
+    align-items: stretch;
+    gap: clamp(8px, 2dvh, 18px);
+    height: 100dvh;
+    min-width: 0;
+    overflow: hidden;
+    padding-bottom: max(6px, env(safe-area-inset-bottom))
+}
+
+.wallet-page .wallet-page-header {
+    height: clamp(48px, 10dvh, 80px);
+    min-width: 0;
+    gap: 12px
+}
+
+.wallet-page .wallet-page-logo {
+    width: clamp(110px, 22vw, 170px);
+    max-height: 42px;
+    object-fit: contain
+}
+
+.wallet-page .wallet-back {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0
+}
+
+.wallet-page .wallet-card {
+    width: 100%;
+    max-width: 420px;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    align-self: center;
+    margin: 0;
+    padding: clamp(16px, 3dvh, 26px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #b99a4b60 transparent;
+    scroll-padding: 12px
+}
+
+.wallet-page .wallet-card-symbol {
+    width: 36px;
+    height: 36px;
+    font-size: 27px;
+    margin-bottom: clamp(8px, 2dvh, 16px)
+}
+
+.wallet-page .wallet-card h1 {
+    font-size: clamp(22px, 5vw, 28px);
+    margin-bottom: 8px
+}
+
+.wallet-page .wallet-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    overflow-wrap: anywhere
+}
+
+.wallet-page .wallet-intro {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: clamp(12px, 2dvh, 18px)
+}
+
+.wallet-page .wallet-options {
+    gap: 8px
+}
+
+.wallet-page .wallet-choice {
+    min-height: 54px;
+    gap: 9px;
+    padding: 10px;
+    flex-wrap: wrap
+}
+
+.wallet-page .wallet-choice-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 21px
+}
+
+.wallet-page .wallet-choice-name {
+    min-width: 0;
+    flex: 1 1 80px;
+    overflow-wrap: anywhere
+}
+
+.wallet-page .wallet-choice-name strong {
+    font-size: 12px
+}
+
+.wallet-page .wallet-choice-status {
+    font-size: 9px
+}
+
+.wallet-page .wallet-help {
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 12px 0
+}
+
+.wallet-page .wallet-card-footer {
+    padding-top: 12px;
+    font-size: 8px;
+    overflow-wrap: anywhere
+}
+
+.wallet-page .wallet-page-footer {
+    margin: 0;
+    padding: clamp(4px, 1dvh, 10px) 0;
+    font-size: 7px;
+    letter-spacing: 1px;
+    text-align: center
+}
+
+@media (max-height: 500px) {
+    .wallet-page .wallet-card-symbol {
+        display: none
+    }
+
+    .wallet-page .wallet-card {
+        padding: 14px 18px
+    }
+
+    .wallet-page .wallet-intro {
+        margin-bottom: 10px
+    }
+
+    .wallet-page .wallet-choice {
+        min-height: 48px;
+        padding: 8px
+    }
+
+    .wallet-page .wallet-help {
+        margin: 9px 0
+    }
+}
+
+/* Compact asset details in the Trade sidebar. */
+.terminal .asset-panel{overflow:hidden;display:flex;flex-direction:column}
+.terminal .asset-panel .panel-title{height:36px;flex-shrink:0;padding:0 12px;font-size:9px}
+.terminal .asset-details{padding:14px 12px;min-height:0;display:flex;flex-direction:column}
+.terminal .asset-monogram{width:34px;height:34px;font-size:19px;flex-shrink:0}
+.terminal .asset-details h2{font-size:20px;margin:10px 0 4px}
+.terminal .asset-details>p{font-size:9px}
+.terminal .asset-price{font-size:21px;margin:16px 0 7px;letter-spacing:-.5px}
+.terminal .asset-change{font-size:9px}
+.terminal .asset-details dl{margin:16px 0 0;padding-top:5px}
+.terminal .asset-details dl>div{margin:10px 0;font-size:10px;gap:8px}
+.terminal .watch-button{margin-top:10px;padding:9px 5px;font-size:10px}
+.terminal .asset-details .asset-footnote{font-size:9px;line-height:1.5;margin-top:10px}
+.terminal .source-link{margin-top:10px;font-size:9px}
+@media(max-height:700px){.terminal .asset-details{padding:10px 12px}.terminal .asset-monogram{width:28px;height:28px;font-size:16px}.terminal .asset-details h2{font-size:18px;margin-top:7px}.terminal .asset-price{font-size:19px;margin-top:12px}.terminal .asset-details dl{margin-top:10px}.terminal .asset-details dl>div{margin:8px 0}.terminal .asset-details .asset-footnote{font-size:8px;margin-top:8px}.terminal .source-link{margin-top:8px}}
+@media(max-height:520px){.terminal .asset-monogram{display:none}.terminal .asset-panel .panel-title{height:30px}.terminal .asset-details{padding:7px 10px}.terminal .asset-details h2{font-size:16px;margin:0 0 3px}.terminal .asset-price{font-size:17px;margin:8px 0 5px}.terminal .asset-details dl{margin-top:8px;padding-top:3px}.terminal .asset-details dl>div{margin:6px 0;font-size:9px}.terminal .watch-button{margin-top:6px;padding:7px 4px}.terminal .asset-details .asset-footnote{display:none}.terminal .source-link{font-size:8px;margin-top:7px}}
+@media(max-width:1000px){.terminal .asset-panel{display:none}}

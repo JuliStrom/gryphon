@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gryphon
 
-## Getting Started
+Криптовалютный терминал и демо портфель на Next.js в сине-золотой теме.
 
-First, run the development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте http://localhost:3000. Для production используйте `npm run build` и `npm run start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Страницы
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/` — стартовая страница с анимированным фоном.
+- `/realm` — описание проекта и переход в приложение.
+- `/terminal` — Trade: 80 активных пар к USDT с наибольшим объёмом торгов за сутки на Binance, график цены и индекс страха и жадности.
+- `/connect-wallet` — выбор демо кошелька. MetaMask открывает Dashboard; доступность расширений симулируется.
+- `/wallet` — Dashboard с демо балансом, графиком портфеля, активами, распределением и операциями. Watchlist показывает только избранные пары из Trade с реальными котировками.
 
-## Learn More
+Кнопки X ведут на https://x.com/TryGryphon. Dashboard возвращается в Trade кнопкой Back; ссылки из карточек открывают выбранную пару через `/terminal?symbol=BTCUSDT`.
 
-To learn more about Next.js, take a look at the following resources:
+## Рыночные данные
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Периоды графика: `24h`, `7d`, `30d`, `1y`, `all`. Период определяет видимую историю, а размер свечей подбирается отдельно. `all` загружает всю доступную историю пары с недельными свечами. Можно переключать свечи и линию, масштабировать график и рисовать трендовые линии.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Котировки обновляются каждые пять минут и вручную кнопкой Refresh. Trade также обновляет данные при возвращении во вкладку. Сервер кеширует список доступных пар на пять минут, котировки на минуту; свечи запрашиваются без кеширования. При ошибках доступны повторные запросы.
 
-## Deploy on Vercel
+Индекс страха и жадности использует ежедневные данные Alternative.me. История кешируется на час, источник указан рядом с индексом. Альтсезон в Dashboard — демо показатель, отдельный источник не подключён. Верхние карточки валют, баланс, история портфеля и операции используют явно обозначенные примерные данные.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Watchlist сохраняется в `localStorage` под ключом `gryphon-watchlist` и синхронизируется между Trade и Dashboard, в том числе в разных вкладках браузера.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Для работы данных необходим исходящий HTTPS-доступ к `data-api.binance.vision` и `api.alternative.me`. API-ключи не нужны. Серверные endpoints:
+
+- `/api/market?symbol=BTCUSDT&interval=24h` — котировки, список рынков и свечи выбранной пары.
+- `/api/markets` — котировки 80 популярных пар; параметр `symbols=BTCUSDT,ETHUSDT` возвращает выбранные пары, даже если они вышли из топ-80.
+- `/api/sentiment` — история индекса страха и жадности.
+
+## Кошелёк
+
+Текущий выбор кошелька открывает демо портфель. Он не подключает расширение, не запрашивает подписи и не отправляет транзакции. Конфигурация Wagmi и React Query сохранена для будущей интеграции с реальными кошельками.
+
+## Структура
+
+- `src/app/` — страницы, metadata и серверные API.
+- `src/components/` — стартовая страница, Realm, терминал и Dashboard.
+- `src/lib/market/` — типы, запросы к провайдерам, Watchlist и модель демо портфеля.
+- `src/config/wagmi.ts` — конфигурация кошельков.
+- `src/styles/` — оформление и адаптивные стили.
+- `public/brand/` — изображения бренда, доступные по URL `/brand/...`.
+
+Импорты `@/` указывают на `src/`.
+
+## Проверки
+
+```bash
+npm run lint
+npm run build
+```
+
+Перед изменением Next.js-кода прочитайте соответствующий локальный справочник в `node_modules/next/dist/docs/`, как указано в `AGENTS.md`.
