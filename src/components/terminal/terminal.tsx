@@ -1,53 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import Image from "next/image";
-import { INTERVALS, MARKETS, formatPrice, type Interval, type MarketResponse } from "@/lib/market/types";
+import { INTERVALS, MARKETS, formatPrice, type Interval } from "@/lib/market/types";
+import { marketQueryOptions } from "@/lib/market/market-query";
 import PriceChart from "./price-chart";
 import SentimentChart from "./sentiment-chart";
 import WalletLink from "@/components/wallet/wallet-link";
 import { useWatchlist } from "@/lib/market/watchlist";
 
-const REFRESH_MS = 5 * 60 * 1000;
 const compact = (value: number) => new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 }).format(value);
 
 export default function Terminal({ initialSymbol = "BTCUSDT" }: { initialSymbol?: string }) {
   const [symbol, setSymbol] = useState(initialSymbol);
-  const [interval, setIntervalValue] = useState<Interval>("24h");
-  const [data, setData] = useState<MarketResponse | null>(null);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [interval, setIntervalValue] = useState<Interval>("all");
+  const marketQuery = useQuery(marketQueryOptions(symbol, interval));
+  const data = marketQuery.data;
+  const error = marketQuery.error?.message ?? "";
+  const loading = marketQuery.isFetching;
   const [search, setSearch] = useState("");
-  const [retry, setRetry] = useState(0);
   const [tab, setTab] = useState<"overview" | "watchlist">("overview");
   const { watchlist, toggleWatch: toggleSavedMarket } = useWatchlist();
-
-  useEffect(() => {
-    let stopped = false;
-    let controller: AbortController | undefined;
-    async function load() {
-      controller?.abort();
-      const currentController = new AbortController();
-      controller = currentController;
-      setLoading(true);
-      try {
-        const response = await fetch(`/api/market?${new URLSearchParams({ symbol, interval })}`, { signal: currentController.signal, cache: "no-store" });
-        const payload = await response.json();
-        if (!response.ok) throw new Error(payload.error || "Unable to load market data.");
-        if (!stopped && !currentController.signal.aborted) { setData(payload); setError(""); }
-      } catch (cause) {
-        if (!stopped && !currentController.signal.aborted) setError(cause instanceof Error ? cause.message : "Unable to load market data.");
-      } finally {
-        if (!stopped && !currentController.signal.aborted) setLoading(false);
-      }
-    }
-    void load();
-    const timer = window.setInterval(() => { if (!document.hidden) void load(); }, REFRESH_MS);
-    const onVisible = () => { if (!document.hidden) void load(); };
-    document.addEventListener("visibilitychange", onVisible);
-    return () => { stopped = true; controller?.abort(); window.clearInterval(timer); document.removeEventListener("visibilitychange", onVisible); };
-  }, [symbol, interval, retry]);
 
   const catalog = data?.catalog ?? [];
   const selected = catalog.find((market) => market.symbol === symbol) ?? MARKETS.find((market) => market.symbol === symbol) ?? { symbol, asset: symbol.replace(/USDT$/, ""), name: symbol.replace(/USDT$/, "") };
@@ -77,9 +52,9 @@ export default function Terminal({ initialSymbol = "BTCUSDT" }: { initialSymbol?
       <section className={`terminal-center${tab === "watchlist" ? " terminal-center-watchlist" : ""}`}>
         <div className="chart-panel">
           <div className="chart-heading"><h1>{selected.asset}<span>/USDT</span></h1><div className="timeframes" aria-label="Chart time range">{INTERVALS.map((value) => <button key={value} className={interval === value ? "active" : ""} aria-pressed={interval === value} onClick={() => setIntervalValue(value)}>{value}</button>)}</div><div className="chart-quote"><strong>{quote ? formatPrice(quote.price) : "—"}</strong><span className={quote && quote.change < 0 ? "negative" : "positive"}>{quote ? `${quote.change > 0 ? "+" : ""}${quote.change.toFixed(2)}%` : "—"}<small>24h</small></span></div></div>
-          {error && <div className="market-error" role="alert">{error}{chartData && " Showing the last available data."}<button onClick={() => setRetry(retry + 1)}>Retry</button></div>}
+          {error && <div className="market-error" role="alert">{error}{chartData && " Showing the last available data."}<button onClick={() => void marketQuery.refetch()}>Retry</button></div>}
           {chartData ? <PriceChart key={`${symbol}-${interval}`} candles={chartData} interval={interval}/> : <div className="chart-placeholder" role="status">{loading ? <><span className="chart-loader"/>Loading {selected.asset} market data…</> : "Price chart is unavailable. Use Retry to request data again."}</div>}
-          <div className="chart-refresh"><span>{data ? `Updated ${new Date(data.updatedAt).toLocaleTimeString("en-GB", { timeZone: "UTC" })} UTC` : "Waiting for market data"}</span><button disabled={loading} onClick={() => setRetry(retry + 1)}>{loading ? "Updating…" : "↻ Refresh"}</button><span>Auto refresh · 5 min</span></div>
+          <div className="chart-refresh"><span>{data ? `Updated ${new Date(data.updatedAt).toLocaleTimeString("en-GB", { timeZone: "UTC" })} UTC` : "Waiting for market data"}</span><button disabled={loading} onClick={() => void marketQuery.refetch()}>{loading ? "Updating…" : "↻ Refresh"}</button><span>Auto refresh · 5 min</span></div>
         </div>
         <SentimentChart interval={interval}/>
         <section className="market-overview"><div className="overview-tabs"><button className={tab === "overview" ? "active" : ""} onClick={() => setTab("overview")}>Market overview</button><button className={tab === "watchlist" ? "active" : ""} onClick={() => setTab("watchlist")}>Watchlist ({watchlist.length})</button></div>{tab === "overview" ? <div className="overview-content"><div><span>24H HIGH</span><strong>{quote ? formatPrice(quote.high) : "—"}</strong></div><div><span>24H LOW</span><strong>{quote ? formatPrice(quote.low) : "—"}</strong></div><div><span>24H VOLUME</span><strong>{quote ? compact(quote.volume) : "—"}<small> {selected.asset}</small></strong></div><div><span>24H TURNOVER</span><strong>{quote ? `$${compact(quote.quoteVolume)}` : "—"}</strong></div></div> : <div className="watchlist-content">{watchlist.length ? watchlist.map((item) => { const ticker = data?.markets.find((quote) => quote.symbol === item); return <button key={item} onClick={() => setSymbol(item)}><span>{item.replace("USDT", " / USDT")}</span><strong>{ticker ? formatPrice(ticker.price) : "—"}</strong></button>; }) : <p>Add assets using the star in the asset details panel.</p>}</div>}</section>
